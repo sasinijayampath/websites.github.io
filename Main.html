@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HOME</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+<link href="external/jquery/jquery-ui.css" rel="stylesheet">
+<script src="external/jquery/jquery.js"></script>
+<script src="external/jquery/jquery-ui.min.js"></script>
+<script src="external/jquery/jquery-1.11.3.min"</script>
+<!-- sliding door jquery -->
+<script src="external/jquery/jquery-1.3.1.min.js"></script>
+<script src="external/jquery/jquery.easing.1.3.js"></script>
+
+  	<!--[if lt IE 9]-->
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<!--[endif]--> 
+  
+
+  
+  
+ 
+  <script>
+  $(function() {
+    
+	 $( "#accordion" ).accordion();
+	 $( "#tabs" ).tabs();
+  });
+  </script>
+ 
+  <script>
+$(document).ready(function() {
+         $window = $(window);
+    $(window).scroll(function(){
+
+        if($window.scrollTop() > 100)
+            $("#menufix").addClass("active");
+        else    
+            $("#menufix").removeClass("active");
+            
+        if($window.scrollTop() > 300)
+            $("#menufix").addClass("active_more");
+        else    
+            $("#menufix").removeClass("active_more");
+    });
+
+
+});
+</script>
+<script type="text/javascript" src="external/jquery/modernizr.custom.26633.js"></script>
+
+	
+
+	<script>
+
+$(document).ready(function() {
+
+	//Custom settings
+	var style_in = 'easeOutBounce';
+	var style_out = 'jswing';
+	var speed_in = 1000;
+	var speed_out = 300;	
+
+	//Calculation for corners
+	var neg = Math.round($('.qitem').width() / 2) * (-1);	
+	var pos = neg * (-1);	
+	var out = pos * 2;
+	
+	$('.qitem').each(function () {
+	
+		url = $(this).find('a').attr('href');
+		img = $(this).find('img').attr('src');
+		alt = $(this).find('img').attr('img');
+		
+		$('img', this).remove();
+		$(this).append('<div class="topLeft"></div><div class="topRight"></div><div class="bottomLeft"></div><div class="bottomRight"></div>');
+		$(this).children('div').css('background-image','url('+ img + ')');
+
+		$(this).find('div.topLeft').css({top:0, left:0, width:pos , height:pos});	
+		$(this).find('div.topRight').css({top:0, left:pos, width:pos , height:pos});	
+		$(this).find('div.bottomLeft').css({bottom:0, left:0, width:pos , height:pos});	
+		$(this).find('div.bottomRight').css({bottom:0, left:pos, width:pos , height:pos});	
+
+	}).hover(function () {
+	
+		$(this).find('div.topLeft').stop(false, true).animate({top:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.topRight').stop(false, true).animate({top:neg, left:out}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:neg, left:out}, {duration:speed_out, easing:style_out});	
+				
+	},
+	
+	function () {
+
+		$(this).find('div.topLeft').stop(false, true).animate({top:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.topRight').stop(false, true).animate({top:0, left:pos}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:0, left:pos}, {duration:speed_in, easing:style_in});	
+	
+	}).click (function () {
+		window.location = $(this).find('a').attr('href');	
+	});
+	
+	
+
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="headers">
+
+	<h1>BEng(Hons) Software Engineering</h1>
+	</div><header>
+	<div id="menufix">
+	
+    <ul class="menu" style="float:center; width:100px;">
+    
+    </ul>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>     
+        <li><a href="#tabs">Modules</a></li>
+        <li><a href="#about">About</a></li>
+		 <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
+	</header>
+	
+
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="bby.jpg" width="1903" height="600" alt="Smiley face" > </div>
+            <div class="swiper-slide"><img src="Entrance-requirements.jpg" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="educ.jpg" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="everyday-english-speaking-course-1.jpg"  width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="download (1).jpg" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="download (3).jpg" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="capture.png" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="academic-banner.png" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="Comprehensive-Course-Material.jpg" width="1903" height="600" alt="Smiley face" ></div>
+            <div class="swiper-slide"><img src="10.jpg" width="1903" height="600" alt="Smiley face" ></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="external/jquery/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container');
+    </script>
+
+	
+	
+	
+	
+	
+	
+	
+	<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Course Overview</a></li>
+    <li><a href="#tabs-2">Entry Requirements</a></li>
+    <li><a href="#tabs-3">Course Modules</a></li>
+  </ul>
+  <div id="tabs-1">
+ <p>The BEng (Hons) Software Engineering embodies the best ways to design, maintain, build and evaluate software systems. It makes use of many of the technical aspects of computer science, especially programming and aims to develop the professional attitudes, interpersonal and technical skills you will need in the software engineering industry.
+</p>
+<br><h3>Course Overview</h3><br>
+
+<p>The course provides a solid foundation in software engineering theory and practice to develop professional software systems. It provides career pathways in software engineering , web application programming,
+software designing / analysis or website designing / programming.</p>
+
+
+ </div>
+  <div id="tabs-2">
+    <p>Students should obtain a minimum of 3 passes at the GCE Advanced Level OR Foundation Certificate in Higher Education AND obtain a minimum of 6 passes in the GCE Ordinary Level with Credit passes in English & Mathematics.</p>
+  </div>
+  <div id="tabs-3">
+
+  <div id="accordion">
+  <h3>Year 1- Level 4</h3>
+  <div>
+    <ul>
+       <li>Communications and Career Management for Computer Scientists & Software Engineers</li>
+		<li>Computer Systems Fundamentals</li>
+		<li>Software Development Principles I</li>
+		<li>Software Development Principles II</li>
+		<li>Web Technology</li>
+		<li>Mathematics for Computing</li>
+		<li>Information Systems</li>
+		<li>Information & Data Modeling</li>
+    </ul>
+  </div>
+  <h3>Year 2- Level 5</h3>
+  <div>
+  <table style="width:100%">
+  
+</tr>
+<tr>
+<td style="color:#da1c23; font-size:25px; colspan:8">Core  Modules</td>
+<td style="color:#da1c23; font-size:25px">Optional  Modules</td>
+</tr>
+<tr>
+<td> <ul>
+	    <li>Object-Oriented Programming</li>
+		<li>Software Development Group Project</li>
+		<li>Database Systems</li>
+		<li>Client-Server Architecture</li>
+		<li>Algorithms: Theory, Design & Implementation</li>
+  </ul>
+</td>
+<td>
+  <ul>
+  <li>Applied Maths & Physics</li>
+<li>3D Graphics Programming</li>
+<li>Server-Side Programming</li>
+<li>Mobile Application Development</li>
+  </ul>
+</td>
+</tr>
+  </table>  
+  
+  </div>
+  <h3>Year 3 - Industrial Placement</h3>
+  
+  <div>
+    <p>
+   A 12-month placement period is compulsory between Years 2 and 4. This experience will give you additional practical skills, and a competitive edge in the job market. This mandatory placement will not only empower a student with a degree but also with the necessary work experience. With this added advantage, IIT students have a 100% employment assurance and is most often selected for high income employment at renowned organizations.
+    </p>
+    
+  </div>
+  <h3>Year 4- Level 6</h3>
+  <div>
+  
+<table style="width:100%">
+  
+</tr>
+<tr>
+<td style="color:#da1c23; font-size:25px; colspan:8">Core  Modules</td>
+<td style="color:#da1c23; font-size:25px">Optional  Modules</td>
+</tr>
+<tr>
+<td> <ul>
+	    <li>Computer Science Project</li>
+		<li>Security and Forensics</li>
+		<li>Reasoning About Programs</li>
+  </ul>
+</td>
+<td>
+  <ul>
+  <li>Advanced Server-side Web Programming</li>
+<li>Concurrent Programming</li>
+<li>Advanced Maths & Game AI</li>
+<li>Mobile Native Application Development</li>
+  </ul>
+</td>
+</tr>
+  </table>  
+  
+  </div>
+</div>
+ </div>
+</div>
+
+
+	<div class="module">
+<div class="qitem">
+	<a href="http://www.google.com"><img src="1.gif" alt="Test 1" title=""/></a>
+	<span class="caption"><h4>Communications and Career Management</h4><p>Teach essential skills of communications to the undergraduates</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="2.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Computer Systems Fundamentals</h4><p>Principles of computing such as binary,decimal numbers & basics of computer networkng </p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="3.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Software Development Principles I</h4><p>Basics of java software engineering language</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="7.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Software Development Principles II</h4><p>Advance using of java.Basics of object orientation programming.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="8.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Web Technology</h4><p>Basics of html language,simple using of CSS, PHP, JavaScript languages.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="9.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Mathematics for Computing</h4><p>Use of logics, mathematical theories.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="1.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Information Systems</h4><p>Basics of database systems, quarries, data management & modeling.</p></span>
+</div>
+<div class="qitem">
+	<a href="#"><img src="9.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Information & Data Modeling</h4><p>Use of diagrams, software designing by using class, use-case, activity, sequence, flow charts</p></span>
+</div>
+<div class="qitem">
+	<a href="http://www.google.com"><img src="8.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Object-Oriented Programming</h4><p>Advance use of object oriented programming, using java & c#</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="7.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>SDP Group Project</h4><p>learn how software project going on,software engineering methods, team work, problem analysis, requirement gathering & business models</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="3.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Client-Server Architecture</h4><p>create client side web applications, attractive web pages use of HTML5, CSS3, jQuery.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="2.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Applied Maths & Physics</h4><p>Advance mathematics with physical science.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="1.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>3D Graphics Programming</h4><p>Create attractive user interface of softwares by using 3D graphics</p></span>
+</div>
+
+
+
+<div class="clear"></div>
+
+
+
+
+<div class="qitem">
+	<a href="#"><img src="3.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Server-Side Programming</h4><p>Create server side of web applications by using PHP etc.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="5.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Mobile Application Development</h4><p>Principles of android mobile software development</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="6.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Computer Science Project</h4><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></span>
+</div>
+<div class="qitem">
+	<a href="#"><img src="1.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Security and Forensics</h4><p>Basics of Security and Forensics</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="2.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Reasoning About Programs</h4><p>Basics of programming</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="3.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Advanced Server-side Web Programming</h4><p>Create server side of web applications by using PHP etc.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="4.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Concurrent Programming</h4><p>Basics of concurrent programming.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="5.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Advanced Maths & Game AI</h4><p>Advance mathematics with artificial intelligence</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="1.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Mobile Native Application Development</h4><p>Principles of android mobile software development</p></span>
+</div>
+<div class="qitem">
+	<a href="#"><img src="4.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Database Systems</h4><p>Advance use of databases</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="2.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Algorithms: Theory, Design & Implementation</h4><p>Theory, Design & Implementation – from basics to advance algorithms.</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="9.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Professional Practice</h4><p>Basic knowledge of how to behave in industry</p></span>
+</div>
+
+<div class="qitem">
+	<a href="#"><img src="8.gif" alt="Test 1" title="" width="126" height="126"/></a>
+	<span class="caption"><h4>Computer Intelligence</h4><p>Basics of computer intelligence</p></span>
+</div>
+
+
+
+<div class="clear"></div>
+
+
+
+
+</div>	
+
+
+	
+	<div class="nav1" id="about">
+    <div class="nav-inner">
+        <h1>Why Software Engineering?</h1>
+		 <h1>  *******</h1>
+		<p>The course covers software development, programming languages, technologies and applications</p>
+<p>		including Java, C/C#, UNIX, UML, graphics, networks, concurrent systems, databases, artificial intelligence and web and mobile computing. 
+</p><p>BSc Software Engineering Students will have the option 
+</p><p>of transferring to year 2 of the BSc (Hons) Computer Science Degree upon completion of the first year.</p>
+		</div>
+</div>				
+	
+	<div class="contact" >
+	<h1>Let's Get In Touch!</h1>
+	<p>Want to know more information? That's great! Give us a call or send us an email and</p>
+	<p>we will get back to you as soon as possible!</p>
+	
+	<p><div style="position: absolute;  left: 720px;  height: 60px; "><img src="phone.png"></div></p>
+	<p><div style="position: absolute;  top:2100px; left: 705px;  height: 60px; ">+94 (0) 112 580 714</div></p>
+    <p><div style="position: absolute;  left: 1150px;  height: 60px; "><img src="mail.png"></div></p>
+	<p><div style="position: absolute;  top:2100px; left: 1120px;  height: 60px; ">international@iit.ac.lk</div></p>
+	<p><div style="position: absolute;  top:2050px; left: 870px;   "><img src="address.png"></div></p>
+	</div>
+	
+	<div class="imagegrid">
+	<div class="container">
+			
+			
+			
+			<section class="main">
+
+				<div id="ri-grid" class="ri-grid ri-grid-size-3">
+					<img class="ri-loading-image" src="images/loading.gif"/>
+					<ul>
+						<li><a href="#"><img src="images/medium/1.jpg "/></a></li>
+						<li><a href="#"><img src="images/medium/2.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/3.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/4.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/5.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/6.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/7.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/8.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/9.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/10.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/11.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/12.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/13.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/14.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/15.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/16.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/17.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/18.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/19.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/20.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/21.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/22.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/23.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/24.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/25.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/26.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/27.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/28.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/29.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/30.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/31.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/32.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/33.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/34.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/35.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/36.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/37.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/38.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/39.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/40.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/41.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/42.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/43.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/44.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/45.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/46.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/47.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/48.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/49.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/50.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/51.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/52.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/53.jpg"/></a></li>
+						<li><a href="#"><img src="images/medium/54.jpg"/></a></li>
+					</ul>
+				</div>
+				
+			</div>
+
+			</section>
+			
+        </div>
+
+		        
+		<script type="text/javascript" src="external/jquery/jquery.gridrotator.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+				$( '#ri-grid' ).gridrotator( {
+					rows : 4,
+					columns : 8,
+					maxStep : 2,
+					interval : 2000,
+					w1024 : {
+						rows : 5,
+						columns : 6
+					},
+					w768 : {
+						rows : 5,
+						columns : 5
+					},
+					w480 : {
+						rows : 6,
+						columns : 4
+					},
+					w320 : {
+						rows : 7,
+						columns : 4
+					},
+					w240 : {
+						rows : 7,
+						columns : 3
+					},
+				} );
+			
+			});
+		</script>
+		
+
+	 <section id="contact" class="section  onetone-contact "  >
+              <div class="home-container container" >
+                                <h1 class="section-title">CONTACT</h1>
+                                <div class="home-section-content">
+                <p style="text-align: center;color: #666666">Any problems?Want to Contact Us? Drop out a message.
+.</p>
+
+<div class="contact-area"><form class="contact-form" action="" method="post">
+
+<ul class="input-list style-1 clearfix">
+    <li>
+	<br><input id="name" tabindex="1" size="37" type="text" value="" placeholder="Name" /><br><br>
+	</li>
+	<li>
+      <input id="email" tabindex="2" size="37" type="text" value="" placeholder="Email" /><br><br>
+    </li>
+    <li>
+     <textarea id="message" cols="39" name="x-message" rows="7" placeholder="Message"></textarea><br><br>
+    </li>
+	<li>
+	<input id="sendto" type="hidden" value="YOUR EMAIL HERE(Default Admin Email)" />
+	</li>
+	<li>
+	<input id="submit" type="button" class="myButton" value="Post" />
+    </li>
+  </ul>
+
+
+</form></div> 
+                </div>
+                </div>
+              <div class="clear"></div>
+                          </section>
+
+			  
+						  
+	</body>					  
+						  
+						  
+
+	<hr>
+	  <footer>
+	   <img src="newLogo_5.jpg">
+  <small>&copy; AboutMe <b>FOLLOW ME</b> </small>
+
+<a href="http://www.facebook.com/emi.janesas"><img src="fb.png" alt="SitePoint" width="20" height="20" align="center"></a>
+ <a href="https://twitter.com/sasjay195"><img src="twitter.jpg" alt="SitePoint" width="20" height="20" align="center"></a>
+  <a href="http://www.instagram.com/sasjay195"><img src="insta.jpg" alt="SitePoint" width="20" height="20" align="center"></a>
+  
+ 
+ </footer>
+
+
+
+
+</html>
